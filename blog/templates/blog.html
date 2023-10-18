@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Blog Home</h1>
+
+<div class="container">
+    {% for article in articles%}
+    <div class="article">
+        <h3> {{article.title}} </h3>
+        <div> {{article.content}} </div>
+        <span> {{article.create_at}} </span>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
