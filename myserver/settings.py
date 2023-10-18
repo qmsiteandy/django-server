@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'quickstart.apps.QuickstartConfig',
+    'blog.apps.BlogConfig',
     'rest_framework'
 ]
 
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'myserver.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        "NAME": "mysql",
+        "NAME": "Django",
         "USER": "root",
         "PASSWORD": "password",
         "HOST": "127.0.0.1",
