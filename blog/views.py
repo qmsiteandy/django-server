@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import _get_all_articles
+from .form import create_article_form
 
 # Create your views here.
 def index(request):
@@ -8,8 +9,8 @@ def index(request):
         "articles": _get_all_articles()
     })
 
-def article(request):
+def create_article(request):
     if request.method == "GET":
-        return render(request, "create_articles.html")
+        return render(request, "create_article.html", context={"form": create_article_form()})
     else:
         return 

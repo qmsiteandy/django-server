@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Create Article</h1>
+
+<div class="container">
+    <form action="/blog/article" method="post">{% csrf_token %}
+        {{form}}
+    </form>
+</div>
+
+
+{% endblock %}
