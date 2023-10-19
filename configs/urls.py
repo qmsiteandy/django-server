@@ -26,7 +26,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('modules.blog.urls')),
+    path('blog/', include('modules.blog.api.urls')),
 ]
 
 # Static file path
