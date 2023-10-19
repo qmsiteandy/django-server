@@ -16,15 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework.routers import DefaultRouter
+from modules.music.api import views as music_views
 
 # router = routers.DefaultRouter()
 # router.register(r'users', views.UserViewSet)
 # router.register(r'groups', views.GroupViewSet)
 
-urlpatterns = [
+router = DefaultRouter()
+router.register(r'music', music_views.MusicViewSet)
+
+urlpatterns = router.urls
+
+urlpatterns += [
     path('admin/', admin.site.urls),
     path('blog/', include('modules.blog.api.urls')),
 ]
