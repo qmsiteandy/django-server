@@ -11,6 +11,7 @@ def index(request):
         "articles": _get_all_articles()
     })
 
+@login_required(login_url="/blog/login")
 def create_article(request):
     if request.method == "GET":
         return render(request, "create_article.html", context={"form": create_article_form()})
