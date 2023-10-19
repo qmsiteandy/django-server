@@ -8,7 +8,14 @@
 <body>
     <nav>
         <div class="nav_item"><a href="/blog">Blog Home</a></div>
+        
+        {% if user.is_authenticated %}
         <div class="nav_item"><a href="/blog/article">Create Article</a></div>
+        <div class="nav_item"><a href="/blog/logout">Logout</a></div>
+        {% else %}
+        <div class="nav_item"><a href="/blog/login">Login</a></div>
+        {% endif %}
+        
     </nav>
     {% block content %}{% endblock %}
 </body>
