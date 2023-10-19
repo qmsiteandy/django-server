@@ -8,7 +8,7 @@ class Articles(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
 
 def _get_all_articles():
-    return Articles.objects.all()
+    return Articles.objects.all().order_by("-create_at")
 
 def _create_article(request):
     Articles.objects.create(title=request.POST.get("title"), 
