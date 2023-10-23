@@ -4,12 +4,19 @@ from django.contrib.auth import authenticate, login as auth_login, logout as use
 from django.contrib.auth.decorators import login_required
 from ..models import Articles
 from ..form import create_article_form, login_form
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 # Create your views here.
 def index(request):
+    logger.info("123")
     return render(request, "blog/blog.html", context = {
         "articles": Articles.objects.all().order_by("-create_at")
     })
+
+
 
 @login_required(login_url="/blog/login")
 def create_article(request):
